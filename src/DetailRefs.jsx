@@ -1,10 +1,12 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "./services/useFetch";
 import Spinner from "./Spinner";
 import PageNotFound from "./PageNotFound";
+import { useCart } from "./CartContext";
 
-export default function Detail(props) {
+export default function Detail() {
+  const { dispatch } = useCart();
   const { id } = useParams();
   const skuRef = useRef();
   const navigate = useNavigate();
@@ -34,7 +36,7 @@ export default function Detail(props) {
           onClick={() => {
             const sku = skuRef.current.value;
             if (!sku) return alert("Select Size");
-            props.addToCart(id, sku);
+            dispatch({ type: "add", id, sku });
             navigate("/cart");
           }}
         >

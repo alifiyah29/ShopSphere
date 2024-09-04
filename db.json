@@ -94,6 +94,21 @@
       "city": "Charlotte",
       "country": "China",
       "id": 7
+    },
+    {
+      "city": "Charlotte",
+      "country": "USA",
+      "id": 8
+    },
+    {
+      "city": "Tempe",
+      "country": "USA",
+      "id": 9
+    },
+    {
+      "city": "Charlotte",
+      "country": "USA",
+      "id": 10
     }
   ]
 }
